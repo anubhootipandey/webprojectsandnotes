@@ -1,0 +1,226 @@
+Q1. What is JSX? (Oyo, Uber)
+Answer:
+JSX is a XML-like syntax extension to ECMAScript (the acronym stands for
+JavaScript XML). Basically it just provides syntactic sugar for the
+React.createElement() function, giving us expressiveness of JavaScript along
+with HTML like template syntax.
+In the example below text inside <h1> tag is returned as JavaScript function to
+the render function.
+class App extends React.Component {
+render() {
+return(
+<div>
+<h1>{'Welcome to React world!'}</h1>
+</div>
+)
+}
+}
+
+Q2. How to create components in React? (XPRate)
+Answer:
+There are two possible ways to create a component.
+● Function Components: This is the simplest way to create a component.
+Those are pure JavaScript functions that accept props object as first
+parameter and return React elements:
+function Greeting({ message }) {
+    return <h1>{`Hello, ${message}`}</h1>
+}
+● Class Components: You can also use ES6 class to define a component. The
+above function component can be written as:
+class Greeting extends React.Component {
+render() {
+return <h1>{`Hello, ${this.props.message}`}</h1>
+}
+}
+
+
+Q3. When to use a class component over a functional
+component? (Google)
+Answer:
+If the component needs state or lifecycle methods, then use class component;
+otherwise, use function component. However, from React 16.8, with the addition
+of Hooks, you could use state, lifecycle methods, and other features that were
+only available in-class components right in your function component.
+
+
+Q4. What is the difference between state and props? (Amazon)
+Answer:
+Both props and state are plain JavaScript objects. While both hold information
+that influences the output of render, they are different in their functionality with
+respect to components. Props get passed to the component similar to function
+parameters, whereas the state is managed within the component similar to
+variables declared within a function.
+
+Q5. Why should we not update the state directly? (Expedia)
+Answer:
+If you try to update the state directly, then it won't re-render the component.
+//Wrong
+this.state.message = 'Hello world'
+Instead use setState() method. It schedules an update to a component's state
+object. When the state changes, the component responds by re-rendering.
+//Correct
+this.setState({ message: 'Hello World' })
+Note: You can directly assign to the state object either in the constructor or
+using the latest javascript's class field declaration syntax.
+
+
+Q6.What are Synthetic Events in React.Js? (Gojek)
+Answer: A synthetic event is a cross-browser wrapper around the browser’s
+native event. It has the same interface as the browser’s native event, including
+stopPropagation() and preventDefault(), except the events work identically
+across all browsers.
+It achieves high performance by automatically using event delegation. In
+actuality, React doesn’t attach event handlers to the nodes themselves. Instead,
+a single event listener is attached to the root of the document. When an event is
+fired, React maps it to the appropriate component element.
+
+Q7.What are Event Handlers in React.js? (Amazon)
+Answer: Event handlers determine what action is to be taken whenever an
+event is fired. This could be a button click or a change in a text input.
+Essentially, event handlers are what make it possible for users to interact with
+your React app.
+Handling events with React elements is similar to handling events on DOM
+elements, with a few minor exceptions.
+
+
+Q8.What is the onClick handler in React? (Goldman Sachs)
+Answer: The React onClick event handler enables you to call a function and
+trigger an action when a user clicks an element, such as a button, in your app.
+Event names are written in camelCase, so the Onclick event is written as onClick
+in a React app. In addition, React event handlers appear inside curly braces.
+Take the following simple example written in HTML:
+<button onclick="sayHello()">
+Say Hello
+<button>
+In a React app, this would be written as follows:
+<button onClick={sayHello}>
+Say Hello
+<button>
+
+Q9.What are the different lifecycle methods in React? (Gojek)
+Answer: Every component in React has lifecycle methods that we can tap into,
+to trigger changes at a particular phase of the life cycle.
+Each component in react goes through three phases: Mounting, Updating and
+Unmounting.
+There are corresponding lifecycle methods for each of the three phases:
+Mounting:
+There are four built-in lifecycle methods that are called in the following order
+when a component is mounted:
+constructor( ) - This is called before anything else. We can set the initial state of
+the component inside this method. The constructor method is used to set the
+initial state and bind methods to the component.
+getDerivedStateFromProps( ) - This is called before rendering the elements in
+the DOM.
+In this method, we can set the state of the component based on the props we
+received. This method is used very rarely.
+render( ) - This is the only required method in the class component. This method
+returns the HTML elements which are going to be rendered inside the DOM.
+componentDidMount( ) - It is called right after the component is rendered inside
+the DOM. All the statements which require the DOM nodes can be executed in
+this method. Network requests from a remote end-point can also be instantiated
+in this method.
+Updating:
+Updates in react are caused by changes in state or props. Update leads to
+re-rendering of the component. The following methods are called when a
+component is re-rendered:
+getDerivedStateFromProps( ) - This method is called again when a component is
+being re-rendered.
+shouldComponentUpdate( ) - This method is called before rendering the
+component when new props are received. It lets React know if the component’s
+output is affected by the newly received props or by the state change. By default,
+it returns true.
+render( ) - To re-render the HTML inside the DOM, the render( ) method gets
+called again.
+getSnapshotBeforeUpdate( ) - This method is called just before the newly
+rendered HTML gets committed to the DOM. It stores the previous state of the
+component so that React has an idea of what parts of the DOM need to be
+updated.
+componentDidUpdate( ) - It is called after the component gets re-rendered. This
+method works just like the componentDidMount( ) method, the difference is that
+this method does not get called on initial render.
+Unmounting:
+componentWillUnmount( ) - This method is called just before the component
+gets destroyed. Any cleanup statements should be executed inside this method.
+
+Q10.What Is the concept of Mounting in React.JS? (Amazon)
+Answer: The name is self-explanatory. Mounting is the phase in which our React
+component mounts on the DOM (i.e., is created and inserted into the DOM).
+This phase comes onto the scene after the initialization phase is completed. In
+this phase, our component renders the first time. The methods that are
+available in this phase are:
+1. componentWillMount()
+This method is called just before a component mounts on the DOM or the
+render method is called. After this method, the component gets mounted.
+Note: You should not make API calls or any data changes using this.setstate in
+this method because it is called before the render method. So, nothing can be
+done with the DOM (i.e. updating the data with API response) as it has not been
+mounted. Hence, we can’t update the state with the API response.
+2. componentDidMount()
+This method is called after the component gets mounted on the DOM. Like
+componentWillMount, it is called once in a lifecycle. Before the execution of this
+method, the render method is called (i.e., we can access the DOM). We can make
+API calls and update the state with the API response.
+
+Q11.What is the Difference Between Rendering And Mounting?
+(OYO)
+Answer: In a React component, initial rendering happens before mounting.
+Rendering returns the elements which are supposed to be mounted in the DOM.
+Mounting a react component means the actual addition of the DOM elements
+created by the react component into the browser DOM for the first time.
+Following are some of the React life cycle functions associated with ‘mounting’.
+● componentWillMount()
+● componentDidMount()
+● componentWillUnmount()
+componentWillMount() will be invoked right after constructor(), but before
+render().
+componentDidMount() will be called after the first time render() method is called
+in a component and the result is updated in the DOM. This function invokes only
+once in the lifetime of a react component.
+componentWillUnmount() too will be called only once in the lifetime of a react
+component, but that happens right before the component is unmounted from
+the DOM. You can use this method to write the cleanup code for the component
+if any.
+render() function will be invoked every time rerendering happens in the
+component. It may happen either through a state change or a prop change.
+The main difference between mounting and rendering is that mounting happens
+once, but rendering can happen any number of times.
+
+Q12.What are hooks in React? (Gojek)
+Answer: Hooks are a new feature added in React v16.8. It allows using all React
+features without writing class components. For example, before version 16.8, we
+need a class component to manage the state of a component. Now we can keep
+the state in a functional component using useState hook.
+
+
+Q13.Why React hooks was introduced? (Amazon)
+Answer: One reason to introduce hooks was the complexity in dealing with this
+keyword inside class components. If not handled properly, this will take some
+other value. That will result in breaking lines like this.setState() and other event
+handlers. Using hooks, we avoid that complexity when working with functional
+components.
+Class components do not minify very well and also make hot reloading
+unreliable. That is another inspiration to bring hooks.
+Another reason is that there is no specific way to reuse stateful component logic.
+Even though HOC and render props patterns address this problem, that asks for
+modifying the class component code. Hooks allow sharing stateful logic without
+changing the component hierarchy.
+The fourth reason is, in a complex class component, related codes are scattered
+in different lifecycle methods. Example, in case of a data fetching, we do that
+mainly in componentDidMount() and componentDidUpdate(). Another example
+is, in the case of event listeners, we use componentDidMount() to bind an event
+and componentWillUnmount() to unbind. Hooks instead help to place related
+code together.
+
+Q14.How useState hook works? What is/are the arguments
+accepted by this hook and what is returned by the hook? (OYO)
+Answer:useState hook is a function that is used to store state value in a
+functional component. It accepts an argument as the initial value of the state. It
+returns an array with 2 elements. The first element is the current value of the
+state. The second element is a function to update the state.
+We import useState first from React by
+import React, { useState } from "react";
+Later we use useState like:
+const [currentStateValue, functionToUpdateState] = useState(initialStateValue);
+
+Q15. How do React Components Communicate with each other?
+(Google)

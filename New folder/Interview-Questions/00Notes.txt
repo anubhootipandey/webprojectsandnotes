@@ -1,0 +1,57 @@
+Interview Questions
+
+Technical Skills
+
+1. Can you explain the difference between state and props in React?
+Answer: 
+State is mutable and controlled by the component itself, while props are immutable and passed from parent components.
+
+
+2. How would you handle forms in React?
+Answer: 
+I would use controlled components to manage form state and handle form submission using event handlers.
+
+
+3. What is the purpose of keys in React lists?
+Answer: 
+Keys help React identify which items have changed, are added, or are removed in a list, improving performance.
+
+
+Problem-Solving Skills
+
+1. How would you optimize the performance of a React application?
+Answer: 
+I would implement code splitting, lazy loading, and memoization techniques to optimize rendering and reduce load times.
+
+
+2. Can you describe a challenging bug you encountered in a React project and how you resolved it?
+Answer: 
+I faced a bug related to state management where components were not updating correctly. I resolved it by carefully tracking state changes and using debugging tools to identify the issue.
+
+
+3. How do you handle state management in large React applications?
+Answer: 
+I prefer using Redux for state management in large applications to maintain a centralized store and manage complex state interactions.
+
+
+Team Collaboration
+
+1. Can you describe a time when you had to work closely with a team member to deliver a project on time?
+Answer: 
+I collaborated with a team member on a tight deadline project by dividing tasks, communicating regularly, and providing support to ensure timely delivery.
+
+
+2. How do you handle conflicts or disagreements with team members during a project?
+Answer: 
+I believe in open communication, active listening, and finding common ground to resolve conflicts constructively and maintain a positive team dynamic.
+
+
+3. What role do code reviews play in your development process?
+Answer: 
+I value code reviews as they help identify bugs, improve code readability, and ensure adherence to best practices, ultimately leading to a more robust application.
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+.tetris {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(20, 30px);
+  border: 2px solid #333;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.block {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+}
+
+/* Customize block colors */
+.block[data-color='#FF0000'] {
+  background-color: #FF0000;
+}
+
+/* Add animation for falling blocks */
+.block-falling {
+  animation: falling 0.5s linear forwards;
+}
+
+@keyframes falling {
+  from { transform: translateY(-30px); }
+  to { transform: translateY(0px); }
+}

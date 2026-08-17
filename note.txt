@@ -1,0 +1,80 @@
+1.What is the default port where webpack server runs?
+--The default port for webpack-server is 8080.
+
+2.A class is a type of function, but instead of using the keyword function to initiate it, which keyword do we use?
+--A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class.
+
+3.What is the use of "webpack" command in React.js?
+--The "webpack" command is a module bundler.
+
+4.In Nodejs how node based web servers differ from traditional web servers?
+--The node-based server uses a single-threaded model and can serve a much larger number of requests compared to any traditional server like Apache HTTP Server.
+
+5.What is the correct phases of the component lifecycle?
+--Mounting: componentDidMount(); Updating: componentDidUpdate(); Unmounting: componentWillUnmount()
+
+6.What is the “key” prop?
+--“Key” prop is a way for React to identify a newly added item in a list and compare it during the “diffing” algorithm.
+
+7.How can you access the state of a component from inside of a member function?
+--this.values are used for this purpose.
+
+8.Which is the object on which the event occurred or with which the event is associated?
+--The event target is the object on which the event occurred or with which the event is associated. When we speak of an event, we must specify both the type and the target. The target property of the Event interface is a reference to the object that dispatched the event.
+
+9.When will the browser invoke the handler?
+--When an event of the specified type occurs on the specified target, the browser invokes the handler. For example, onclick function is executed when the mouse is clicked.
+
+10.The process by which the browser decides which objects to trigger event handlers on is?
+--Solution description
+Event propagation is the process by which the browser decides which objects to trigger event handlers. Event propagation is a way to describe the “stack” of events that are fired in a web browser.
+
+11.The high-level events among the following events are?
+--UI events are higher-level events, often on HTML form elements that define a user interface for a web application. They include the focus event (when a text input field gains keyboard focus), the change event when the user changes the value displayed by a form element, and the submit event when the user clicks a Submit button in a form.
+
+12.In which part does the form validation occur?
+--The data information from the client-side is first sent to the server-side. Form validation used to occur at the server after the client had entered all necessary data and then pressed the Submit button.
+
+13.What is the purpose of data format validation?
+--The data entered through the server-side is used for validation. The data that is entered must be checked for correct form and value. This would need to put more logic to test the correctness of data.
+
+14.How can you set a default value for an uncontrolled form field?
+--We can set a default value for an uncontrolled form field by using the defaultValue property.
+
+15.property of the JSON() method?
+--JSON is frequently used to send and receive data from a web server. The data that is sent to a web server must be a string. In that scenario, the js object is converted to a string using JSON.stringify().
+
+16.React Lifecycle method static getDerivedSateFromProps(props , state) is called when ____
+-- static getDerivedSateFromProps(props, state) is called in both cases, when the component is created and when the component is updated
+
+17.the React.js Lifecycle method static getDerivedSateFromProps(props, state) is called?
+--In React.js, the static getDerivedSateFromProps(props, state) is called in both cases when a component is created and when a component is updated.
+
+18.How many stages are there in React js life cycle?
+--In React Lifecycle there are 3 stages: Mount, Update, and Unmount.
+
+19.What will happen if you render an input element with disabled = {false}
+--It will be rendered as enabled.
+
+20.Which is used to pass data to a component from outside in React?
+--Props can be used to pass dynamic data to a component. When the data in the props changes, the component re-renders.
+
+21.If a function component should always render the same way given the same props, what is a simple performance optimization available for it?
+--Wrap it in the React.memo higher-order component.
+
+22.Regarding React js events, Which statement is true?
+--Parent component can pass event handler function as props to child component and then this can be used to handle the event. Thus we can say that events raised in the child component can be handled in the parent component.
+
+23.Why is it important to avoid copying the values of props into a component's state where possible?
+-- because you want to allow a component to update in response to changes in the props
+
+24.What are the children’s props?
+--a property that lets you pass components as data to other components.
+
+25.What is Reconciliation?
+--Reconciliation is the process through which React updates the DOM. React use a “diffing” algorithm so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM when there’s an update of components. Once it is finished calculating, the new update would be reflected on the real DOM.
+
+26.referring parent class in React.js?
+--As super is used for referring to the parent class.
+
+27.

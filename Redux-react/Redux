@@ -1,0 +1,414 @@
+
+--------------------------------------------------------------------------------------------------------------------------
+
+WHAT IS REDUX?
+-Redux is a JS library for predictable and maintainable global state management.
+-A single store containing "global" state
+-Dispatching plain object actions to the store when something happens in the app
+-Pure reducer functions looking at those actions and returning immutably updated state
+
+--------------------------------------------------------------------------------------------------------------------------
+
+FEATURES OF REDUX:-
+
+1.Predictable
+Redux helps you write applications that behave consistently, run in different environments (client, server, and native),
+and are easy to test.
+
+2.Centralized
+Centralizing your application's state and logic enables powerful capabilities like undo/redo, state persistence, and much more.
+
+3.Debuggable
+The Redux DevTools make it easy to trace when, where, why, and how your application's state changed. Redux's architecture lets you log changes, use "time-travel debugging", and even send complete error reports to a server.
+
+4.Flexible
+Redux works with any UI layer, and has a large ecosystem of addons to fit your needs.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Why Redux Toolkit is used?
+
+-Redux Toolkit simplifies store setup down to a single clear function call, while retaining the ability to fully configure the store's options if you need to
+-Redux Toolkit eliminates accidental mutations, which have always been the #1 cause of Redux bugs
+-Redux Toolkit eliminates the need to write any action creators or action types by hand
+-Redux Toolkit eliminates the need to write manual and error-prone immutable update logic
+-Redux Toolkit makes it easy to write a Redux feature's code in one file, instead of spreading it across multiple separate files
+-Redux Toolkit offers excellent TS support, with APIs that are designed to give you excellent type safety and minimize the number of types you have to define in your code
+-RTK Query can eliminate the need to write any thunks, reducers, action creators, or effect hooks to manage fetching data and tracking loading state
+
+--------------------------------------------------------------------------------------------------------------------------
+
+********************************************-----REDUX-----********************************************************
+
+Imagine your web app is like a garden, and you have different plants (components) growing in it. These plants need water (data) to grow and stay healthy.
+
+Redux is like a watering can that helps you manage how each plant gets water. Instead of watering each plant individually, you fill up the watering can with water (store all your app's data in one place), and then you distribute that water to the plants as needed (access and update data in your app).
+
+Here's how it works:
+
+1.Store: The watering can is like the Redux store. It holds all the water (data) for your plants (components) in one place.
+2.Actions: Actions are like pouring water from the watering can onto specific plants. They're simple objects that describe what happened in your garden. For example, you might have an action called "waterPlant" or "trimPlant".
+3.Reducers: Reducers are like gardeners who know how to water specific plants based on the actions you give them. They take the current state of your garden (the water level in the watering can) and the action (pouring water on a plant), and they figure out how to update the garden (change the data in the store) accordingly.
+4.Dispatch: Dispatching is like telling the gardener to water a specific plant. You send an action to the store, and the reducers figure out how to update the data based on that action.
+5.Selectors: Selectors are like choosing which plants you want to water. They're functions that help you get specific pieces of data from the store.
+So, Redux helps you manage your app's data flow in a predictable way, making it easier to understand and maintain your code as your app grows. Just like how a watering can helps you efficiently water your garden, Redux helps you efficiently manage your app's data.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Why use redux in react?
+
+Using Redux with React simplifies managing the state of your application, especially as it grows larger and more complex. Here's why you might want to use Redux in simpler terms:
+
+1.Centralized State Management: Imagine your app's state (like data, UI state, etc.) as a big box of toys. Redux acts like the organizer of this box, keeping everything neat and tidy in one place. This makes it easier to find and update specific parts of your app's state.
+2.Predictable State Changes: Redux encourages you to update your app's state in a predictable way. Instead of directly changing the state all over the place, you dispatch actions (like pressing buttons) that describe what happened. These actions are handled by reducers (like rules) that update the state accordingly. This predictability makes it easier to understand and debug your code.
+3.Easier Debugging and Testing: Since Redux separates your app's state logic from your UI components, it's easier to debug and test. You can easily track how your app's state changes over time, and you can test your reducers in isolation to make sure they behave as expected.
+4.Better Scalability: As your app grows, managing state with just React's built-in state management can become cumbersome. Redux provides a scalable solution by offering a clear pattern for managing state, which makes it easier to maintain and scale your app over time.
+5.Community and Ecosystem: Redux has a large and active community with a vast ecosystem of tools, libraries, and resources. This means you can easily find solutions to common problems, learn best practices, and stay up-to-date with the latest developments in state management for React applications.
+Overall, using Redux in React simplifies state management, promotes predictability and maintainability, and provides a robust solution for scaling your application as it grows.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What do you understand by an action in Redux's architecture?
+
+In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are reducers in Redux's architecture?
+
+Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next state. Its syntax is given below:
+ (previous_state, action) => new_state
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Describe what is meant by a "store" in Redux.
+
+“Store” in Redux is used to carry together all the states, reducers, and actions which create the app. Some of the responsibilities of the store are as follows:
+
+1.The state of the current application from inside is held by the Redux Store.
+2.We can access the current state using store.getState().
+3.We can update the state using store.dispatch(action).
+4.We can also register listener callbacks using the store.subscriber(listener).
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Name all the Redux Store methods.
+
+All the Redux Store Methods are as follows:
+1.getState()
+2.subscribe(listener)
+3.dispatch(action)
+4.replaceReducer(nextReducer)
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are the workflow features in Redux?
+
+The workflow features in Redux are as follows:
+1.Reset: The state of the store is allowed to be reset.
+2.Revert: Revert or Rollback to the last committed state is allowed.
+3.Sweep: Every disabled action which we have fired unintentionally will be removed.
+4.Commit: The current state is made the initial state.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+How can we structure the top level directories in Redux?
+
+Every Redux application has multiple top-level directories as given below:
+1.Components: Components are used for “dumb” React components unfamiliar with Redux.
+2.Containers: Containers are used for “smart” React components that are connected to Redux.
+3.Actions: Actions are used for all the action creators, where the file name should be corresponding to the part of the app.
+4.Reducers: Reducers are used for all the reducers where the file name is corresponding to the state key.
+5.Store: Stores are used for store initialization. This directory works best in small and mid-level size apps.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+How can we access a redux store outside a react component?
+
+For accessing a redux store outside a react component, we can export the store from the module where it has been created with createStore as done in the following example:
+store = createStore(reducer);
+export default store;
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Differentiate between React Redux and React's Context API.
+
+The key differences in the comparison: Context Api vs Redux are as follows:
+
+1.React Redux	
+-In order to use React-Redux in our application, we need to code it separately and then merge it into the main project.	
+-The number of features provided by React-Redux is comparatively more than React Context.
+
+2.React Context API
+-React Context can be used in the application directly.
+-The number of features provided by React Context is comparatively less than React-Redux.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are the things which we should never do inside a reducer?
+
+The things which we should never do inside a reducer are as follows:
+1.Modify the argument of the reducer
+2.We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
+3.We should not call non-pure functions, for instance Date.now(), Math.random(), etc
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are the problems that Redux solves?
+
+Redux solves many problems faced while building complex front-end web applications.
+
+1.State Management: Redux provides a centralized way of managing the application state.
+Predictable State Changes: Redux follows unidirectional data flow, which makes it easier to understand how data changes over time.
+2.Debugging: Redux includes tools like Redux DevTools, which allow you to inspect state changes through the application’s state history.
+3.Handling Asynchronous Logic: While Redux is synchronous, it integrates with middleware libraries like Redux Thunk or Redux Saga, which allow developers to handle asynchronous logic.
+4.Time Travel and Undo/Redo: Redux keeps a history of state changes, so it’s possible to implement features like time travel debugging, where you can move back and forth through the application’s state history to understand how the state evolved.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are the advantages of Redux in React?
+
+1.Centralized state management system:  Redux state is stored globally in the store. All the components of the entire application can easily access the data directly.
+2.Performance Optimizations: Redux store helps in improving the performance by skipping unnecessary re-renders and ensuring that a given component re-renders only when its data has actually changed.
+3.Pure reducer functions:Redux depends on pure functions which takes a given state (object) and passes it to each reducer in a loop. In case of any data changes, a new object is returned from the reducer (re-rendering takes place).
+4.Storing long-term data: Since data stored in redux persists until page refresh, it is widely used to store long-term data.
+5.Great supportive community: Since redux has a large community of users, it becomes easier to learn about best practices, get help when stuck, reuse your knowledge across different applications.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain the core principles of Redux.
+
+Three principles that Redux follows are:
+1.Redux is a Single Source of Truth
+2.The State is Reada only State
+3.The Modifications are Done with Pure Functions
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Is it necessary to keep all the component states in the Redux store?
+
+No, it’s not necessary to keep all component states in the Redux store. While Redux provides a centralized state management solution, it’s not meant to replace local component state entirely. There are several factors to consider when deciding whether to use Redux for a particular piece of state.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain some features of React Redux.
+
+Some of the major features of Redux are as follows:
+
+1.Reduces code complexity: React-redux with the introduction of the store holds the state of the application’s components and hence makes the code simpler as it removes the confusion of where the state should have resided.
+2.Easier Maintainability: With the help of the store, the state is now located at one position in the application which makes it easier to maintain whenever an update in the state takes place in various components.
+3.Reduces Time: React-redux refreshes the parts of a page rather than reloading the whole page and therefore saves us time.
+4.Effortless Debugging: React-redux introduces reducers which are pure functions operating on the state which makes the logic simpler and helps in achieving effortless debugging.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the significance of immutability in Redux?
+
+The significance of immutability in Redux lies in ensuring a predictable state and simplifying state management. Using immutable states allows us to write code that can quickly tell if the state has changed, without needing to do a recursive comparison on the data, which is usually much faster.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain the difference between Redux and React’s local state.
+
+React state is stored locally within a component. To share this state with other components in the application, props are passed to child components, or callbacks are used for parent components. Redux state, on the other hand, is stored globally in the store.
+
+Feature	                              Redux	                                         React’s Local State
+~~~~~~~~~~~~~~~~~         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Scope	           *            1.Application-wide	                                  1.Component-specific
+Access	           *         2.Accessed by multiple components	                 2.Accessed only by the component
+Data Flow	       *             3.Unidirectional	                                    3.Component-centric
+Scalability	       *           4.Suitable for large-scale apps	                   4.Suitable for small to medium apps
+Learning Curve	   *                5.Steeper	                                           5.Easier
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are pure functions in the context of Redux?
+
+A pure function is defined as any function that doesn’t alter input data, doesn’t depend on the external state, and can consistently provide the same output for the same input. As opposed to React, Redux depends on such pure functions.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What do you understand about Redux Toolkit?
+
+Redux toolkit is a npm package that is made to simplify the creation of redux store and provide easy state management. Before the introduction of the Redux toolkit state management was complex in simple redux. The Redux toolkit acts as a wrapper around redux and encapsulates its necessary functions. Redux toolkit is flexible and provides a simple way to make a store for large applications. It follows SOPE principle which means it is simple, Opinionated, Powerful, and Effective.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the purpose of the Redux store?
+
+Store is an object which provides the state of the application. This object is accessible with help of the provider in the files of the project. The only way to change the state inside it is to dispatch an action on it.
+
+There are three important parts of the store:
+1.createStore(): To create a store object in redux.
+2.dispatch(action): To change the state of store data by using the actions.
+3.getState(): For getting the current state of the store in redux.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What’s the typical flow of data like in a React with Redux app ?
+
+1.The flow of data in a React-Redux application begins at the component level when the user interacts with the application UI. This interaction leads to the action creators dispatching an action.
+2.When an action is dispatched, it is received by the root reducer of the application and is passed on to all the reducers. Thus, it becomes the reducer’s task to determine if it needs to update the state based on the dispatched action.
+3.This is checked by using a simple switch statement to filter out the required actions. Each (smaller) reducer in the application accepts the dispatched action and if the type of the dispatched action matches, it returns a newly updated state.
+4.It is essential to note here that the state never actually changes in redux. Instead, the reducer always generates a new state which is a copy of the old state, but with some modifications.
+5.The store then informs the component about the new state which in turn retrieves the updated state and re-renders the component.
+6.Another important observation here is that flow of data in a React-Redux application is unidirectional, i.e., it only goes in one direction.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the purpose of the Provider component in React Redux?
+
+The Provider component makes the Redux store available to any nested components that need to access the Redux store. Since any React component in a React Redux app can be connected to the store, most applications will render a <Provider> at the top level, with the entire app’s component tree inside of it.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the connect function in React Redux used for?
+
+The connect() function connects a React component to a Redux store. It provides its connected component with the pieces of the data it needs from the store, and the functions it can use to dispatch actions to the store.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain the mapStateToProps functions in React Redux.
+
+In React Redux, the mapStateToProps function is used to connect Redux state to React component props. It’s a function that maps parts of the Redux state to the props of a React component, and allows the component to access and use that state.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain mapDispatchToProps functions in React Redux.
+
+The mapDispatchToProps function is used to map Redux action creators to component props. It allows components to dispatch actions to the Redux store without directly accessing the store or importing action creators.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the purpose of the dispatch function in React Redux?
+
+The dispatch function is mainly used for dispatching actions to the Redux store. It is a method provided by the Redux store that accepts an action object as its argument and triggers the state update process.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is Redux middleware?
+
+Redux middleware is a piece of software that works between the action creators and the reducers in a Redux application. It intercepts actions before they reach the reducers, and allows to perform asynchronous operations, modify actions, or implement custom behavior.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Describe the role of middleware in Redux.
+
+Middleware in Redux is like a gatekeeper that stands between the actions you dispatch in your app and the part of Redux responsible for updating the state. It’s is used to catch these actions before they go to the state updates and do some extra stuff with them. For example, it can check if a user is authenticated or not before giving the permissions.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are action chaining in Redux middleware?
+
+Action chaining in Redux middleware refers to the process of dispatching multiple actions in response to a single dispatched action. This technique is often used to handle complex sequences of actions or to arrange multiple asynchronous operations.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Discuss the strategies for handling side-effects in Redux applications.
+
+There are several strategies for handling side-effects in Redux include using middleware like Redux Thunk for asynchronous actions and Redux Saga for more complex scenarios. These tools manage side-effects outside reducers.
+
+1.Redux-Thunks: Thunks are functions that wrap an action creator and can perform asynchronous logic before dispatching actions. They provide a way to handle side-effects in Redux without introducing additional middleware.
+2.Redux-Saga: Redux-Saga is a middleware library for handling side-effects in Redux applications. It uses generator functions to describe asynchronous logic as a series of simple, composable effects.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are selectors in Redux?
+
+Selectors in Redux are the functions that extract specific pieces of data from the Redux store state. They provide a way to pass the data from the state in an efficient manner. Selectors are mainly used to encapsulate the process of accessing and transforming state data which makes it easier to manage and reuse across multiple components.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain the concept of “container components” in React Redux.
+
+Container components are React components that are responsible for interacting with the Redux store. They are connected to the Redux store using the connect() function. Container components acts as the bridge between the Redux store and presentational components, providing them with the necessary data from the store and actions to dispatch.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+How can you optimize performance in a React Redux application?
+
+Optimizing performance in a React Redux application involves several strategies which focusses at reducing unnecessary renders, improving data fetching and caching, and optimizing component rendering.
+
+1.Utilize memoized selectors get data from Redux in a smart way so that it doesn’t slow down.
+2.Implement shallow equality checks to prevent unnecessary component renders.
+3.Batch updates with React.StrictMode or libraries like react-batch-updates to minimize DOM manipulations.
+4.Use React Hooks like useSelector and useDispatch for more efficient state management in functional components.
+5.Consider server-side rendering (SSR) and code splitting to improve initial load times and perceived performance.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are the advantages of using selectors in Redux?
+
+There are several advantages of using selectors in Redux.
+
+1.Efficiency: Selectors optimize performance by efficiently deriving data from the Redux store.
+2.Abstraction: It abstract the complexity of accessing and transforming state data, making code easier to manage and reuse.
+3.Reusability: Selectors are reusable functions that can be used in multiple parts of the application to access the same state data.
+4.Encapsulation: It encapsulate state access and transformation logic within a single function, improving code organization.
+5.Performance Optimization: Selectors help optimize performance by reducing unnecessary re-renders of components through memoization.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What tools and libraries can you use for debugging Redux applications?
+
+There are several tools and libraries available which can be used for debugging Redux applications.
+
+1.Redux DevTools Extension
+2.Redux DevTools
+3.React DevTools
+4.redux-logger
+5.redux-saga-devtools
+6.redux-immutable-state-invariant
+7.redux-trace
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Describe the concept of Redux DevTools.
+
+Redux DevTools is a powerful debugging tool for Redux applications that provides you with insights into the state and actions of their Redux store. It offers a range of features designed to simplify the debugging process and improve the development experience.
+
+1.Time-Travel Debugging
+2.State Inspection
+3.Action Replay
+4.Middleware Integration
+5.Customization Options
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are Redux DevTools extensions?
+
+Redux DevTools extensions are browser add-ons designed to enhance the debugging experience for Redux-powered applications. They integrate seamlessly with web browsers like Chrome and Firefox, offering features such as time-travel debugging, state inspection, action replay, middleware integration, and customization options. These extensions simplify the debugging process by providing insights into the state and actions of the Redux store directly within the browser’s developer tools, making it easier for developers to identify and troubleshoot issues in their Redux applications.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Explain time-travel debugging in Redux.
+
+Time-travel debugging in Redux lets you go back and forth through the history of actions in the Redux store. It helps you understand how the application’s state changes over time and makes it easier to pinpoint and fix bugs by replaying specific scenarios. It’s like rewinding and fast-forwarding through time to see how the state evolves.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What are Redux middleware composition.
+
+Redux middleware composition is refers to the process of combining multiple middleware functions to enhance the behavior of the Redux store. Each middleware function can modify actions, perform tasks like logging or asynchronous operations, and pass the action along to the next middleware. By chaining these functions together, developers can create custom pipelines to handle various aspects of action processing, making it easier to manage complex logic and extend the capabilities of Redux.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+What is the purpose of the reselect library in Redux?
+
+The purpose of the Reselect library in Redux is to optimize the performance of selectors. It provides a memoization mechanism that caches the results of selector functions based on their input selectors. This means that if the input selectors and arguments to a selector function remain unchanged between invocations, Reselect will return the cached result instead of recomputing it, leading to significant performance improvements.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Can I dispatch an action in the reducer?
+
+In Redux, while it’s possible to dispatch actions within reducers, itis not suggested to do that. Reducers should remain pure functions, and responsible only for updating the state based on the dispatched action and returning a new state object.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+

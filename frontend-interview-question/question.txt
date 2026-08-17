@@ -1,0 +1,58 @@
+
+*****************************************REACT/MACHINE CODING********************************************
+
+1.Introduction JSX
+2.React Component
+3.Component State and Props
+4.Adding Style(CSS)
+5.Functional and Class components
+6.React Lifecycle Methods
+7.Virtual DOM
+8.React Hooks
+9.Custom Hooks
+10.Context API
+11.Synthetic Events
+12.Routing
+13.Data flow (Redux/Flux)
+14.Server-side rendering
+15.Unit testing
+16. Jest and React testing library
+17.Mocking Data
+18.Understanding Webpack(Bundler)
+19.Babel, env, prettier, linter
+
+*************************************************MACHINE CODING**************************************************
+
+1.Star Rating
+2.Design Pop over
+3.Design accordion
+4.Design carousel
+5.Design grid using HTML/CSS and Javascript with search and sort, event bubbling(Amazon onsite)
+6.Design Navbar
+7.infinte Scroll
+8.Typeahead / autocomplete using trie
+9.Implement tic tac toe
+10.Implement Debounce Function
+11.Make snake ladder board
+12.Make calender of any month like date picker
+13.Implement throttle function ect
+
+**************************************************JAVASCRIPT***************************************************
+
+1.Design patterns like singleton, factory patterns, etc.
+2.Implement the publisher-subscriber pattern in Javascript
+3.Implement the map, filter, reduce, and for Each polyfill
+4.Implement the Function.bind, call, apply method on the Function Prototype
+5.Implement Async. parallel, Async.series which executes a set of async tasks parallel and in series.
+6.Prototype and Prototype inheritance
+7.How rendering work in the browser
+8.Event delegation and event propagation
+9.Implement Memoization
+10.Progressive Web application
+11.Clone an Object
+12.Debouncing and Throttling
+13.Implement clearAllTimeout()
+14.Build a Promise from scratch
+15.Event target - addEventListener, removeEventListener, dispatchEvent
+16.Intersection observe
+

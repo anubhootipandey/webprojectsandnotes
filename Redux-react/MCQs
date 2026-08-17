@@ -1,0 +1,69 @@
+1.What is the name of the global object which is used to manage the application state in Redux?
+
+a-Store (T)
+b-File
+c-Directory
+d-None of these
+
+2.The states and actions are held together in Redux using?
+
+a-View
+b-Subscribe
+c-Reducer (T)
+d-None of these
+
+3.The following can be used to retrieve updated state in Redux and render it again:
+
+a-Store
+b-Reducer
+c-Action
+d-View (T)
+
+4.The number of arguments which the createStore function can have are:
+
+a-5
+b-1
+c-3 (T)
+d-2
+
+5.Which of the following makes stores available in Redux?
+
+a-Views
+b-Containers
+c-Providers (T)
+d-Actions
+
+6.The type of data flow followed in Redux is?
+
+a-Bi directional
+b-Unidirectional (T)
+c-Both (a) and (b)
+d-None of these
+
+7.What is used to notify the view by executing their callback functions?
+
+a-Store (T)
+b-Reducer
+c-Action
+d-State
+
+8.In order to  retrieve the current state of our Redux store, we can user the following function:
+
+a-content
+b-action
+c-dispatch
+d-getState (T)
+
+9.Which of the following is a core principle of Redux?
+
+a-Single source of truth
+b-The state is read only
+c-Changes are made with pure functions
+d-All of the above (T)
+
+10.In order to dispatch an action to change a state in our application, we can use the following method:
+
+a-getState
+b-setState
+c-subscribe
+d-dispatch (T)

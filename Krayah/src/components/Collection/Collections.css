@@ -1,0 +1,33 @@
+.collections h1{
+    margin-left: 40%;
+    font-weight: 500;
+}
+.collectionscard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ccard{
+    height: 400px;
+    width: 300px;
+    margin: 30px;
+    background-color: rgba(206, 203, 203, 0.512);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.ccard img{
+    height: 70%;
+    width: 100%;
+}
+.ccard p{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.ccard span p1{
+    font-weight: 700;
+}
+.ccard span button{
+    height: 30px;
+    width: 100px;
+    margin-left: 70px;
+}

@@ -1,0 +1,17 @@
+div {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to left, #20abe2, #1f66b6, #1a08b9);
+  width: 500px;
+}
+
+h1{
+  color: #fff;
+}
+
+p{
+  color: #fff;
+  font-size: 1rem;
+}

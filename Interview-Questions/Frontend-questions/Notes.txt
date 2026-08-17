@@ -1,0 +1,53 @@
+1. Custom Hooks for api calling and what they do and give example.
+2.useRef uses in raectjs
+3.useContext uses
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.What is Closures and what they use for and when we can use them?
+2. How javascript is single-threaded? How the async features works?
+3. Is setTimeout is javascript programming or something else?
+------>setTimeout is not part of js engine, it is a part of javascript engine. So this setTimeout and apis all are part of browser
+    and browser takes care of these things like they are the web apis.
+4.How DOM is differently used in react?
+
+5.Why does React use CamelCase?
+This convention helps distinguish custom hooks from regular functions and helps React apply the necessary rules and optimizations. 
+Use CamelCase: Following JavaScript conventions, the name of the custom hook should use CamelCase.
+
+6.Explain the concept of lifting state up?
+--Lifting state up is a pattern where the state of a child component is moved to its parent component, allowing multiple child
+components to share the same state.
+
+7.What are controlled components in React?
+---Controlled components are components where the form data is controlled by React state.
+---The input elements receive their current value from state and have their value updated through a callback function.
+
+8.What is the significance of the key attribute in React?
+---The key attribute is used to uniquely identify elements in a list.
+---It helps React efficiently update the DOM when the list changes.
+
+9.What is the significance if dangerouslySetInnerHTML property im React?
+---dangerouslySetInnerHTML is used to inject HTML directly into a component, but it should be used with caution to avoid cross
+site scripting(XSS) vulnerabilities.
+
+10.What is React Developer Tool?
+---The React Developer Tool is a browser extension that allows developers to inspect and debug React Components hierarchies
+in the Chrome and Firefox browsers.
+
+11.How does React handle prop drilling, and how can it be avoided?
+---Prop Drilling occurs when props are passed down through multiple levels of components.
+---It can be avoided by using context or state management libraries like Redux.
+
+12.Explain Error Boundaries in React?
+---Error Boundaries are components that catch JavaScript errors anywhere in their child component tree and log those errors,
+display a fallback UI, or take other actions.
+
+13.What are React Portals?
+---React Portals provide a way to render children into a DOM node that exists outside the parent component's hierarchy.
+
+14.What is the purpose of useLayoutEffect Hook?
+---useLayoutEffect is similar to useEffect, but it fires synchronously after all DOM mutations. It is often used for measuring
+and synchronizing layout.
+
+15.Explain the concept of useDebugValue hook.
+---useDebugValue is used to display a label for custom hooks in React DevTools.

@@ -1,0 +1,82 @@
+1.What is Redux-toolkit?
+--It is like a magic toolbox for redux. It helps you write redux code faster and with less fuss.
+
+2.Why use Redux Toolkit?
+--It is used for managing complex state in react apps.
+--Whether handling user authentication, caching api responses, or syncing global app state, redux toolkit provides a reliable solution for managing app-wide data with ease.
+
+3.Installing Redux Toolkit
+-->   npm install @reduxjs/toolkit
+
+4.Create a store
+--Let's setup the Redux store. It's like a big box where your app's data lives, redux toolkit makes it easy.
+
+  import { configureStore } from '@reduxjs/toolkit';
+  import counterReducer from './counterSlice';
+
+  const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+    },
+  });
+
+5.Create a Slice
+--Slices are like slices of cake in redux toolkit! They're small pieces of your app's data and the actions that change.
+
+   import { createSlice } from '@reduxjs/toolkit';
+
+   const counterSlice = createSlice({
+    name: 'counter',
+    initialState: 0,
+    reducers: {
+        increment: state => state + 1,
+        decrement: state => state - 1,
+    },
+   });
+
+   export const { increment, decrement } = counterSlice.actions;
+   export default counterSlice.reducer;
+
+6.Wrap with provider
+--To use redux toolkit, you need to provide the redux store to your react app, wrap your app in a <PROVIDER>.
+
+   import React from 'react';
+   import ReactDom from 'react-dom';
+   import { Provider } from 'react-redux';
+   import App from './App';
+   import store from './store';
+
+   ReactDom.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+   );
+
+7.Dispatch Actions
+--Actions are like messengers that tell redux what to do. With redux toolkit, sending actions is super simple.
+
+   import { useDispatch } from 'react-redux';
+   import { increment, decrement } from './counterSlice';
+
+   function CounterComponent(){
+    const dispatch = useDispatch();
+
+    return (
+        <div>
+            <button onClick={() => dispatch(increment())}>Add 1 </button>
+            <button onClick={() => dispatch(decrement())}>Subtract 1 </button>
+        </div>
+    );
+   }
+
+8.Use-Selector Hook
+--Need to see what's in your redux store? No problem ! Use UseSelector is there for you.
+
+    import { useSelector } from 'react-redux';
+
+    function CounterDisplay(){
+        const counter = useSelector(state => state.counter);
+
+        return <div>Count: {counter}</div>
+    }
