@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>User Profile</title>
+  </head>
+
+  <body>
+    <h1>User Profile</h1>
+    <p>
+      Already have an account? <button><a href="login.html">Login</a></button>
+    </p>
+    <form action="detail.html" method="post" onsubmit="saveUserDetails(event)">
+      <ol>
+        <li>
+          <h4>Name:</h4>
+          <br />
+          <input type="text" id="nameInput" placeholder="Enter your name" />
+        </li>
+        <li>
+          <h4>E-mail:</h4>
+          <br />
+          <input type="text" id="emailInput" placeholder="Enter your email" />
+        </li>
+        <li>
+          <h4>Password:</h4>
+          <br />
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter your password" />
+        </li>
+        <li>
+          <h4>PhoneNumber:</h4>
+          <br />
+          <input
+            type="number"
+            id="phoneNumber"
+            placeholder="Enter your number" />
+        </li>
+        <li>
+          <h4>Location:</h4>
+          <br />
+          State:
+          <input type="text" id="stateInput" placeholder="Enter your state" />
+          City
+          <input type="text" id="cityInput" placeholder="Enter your city" />
+          Pincode
+          <input
+            type="text"
+            id="pincodeInput"
+            placeholder="Enter your pincode" />
+        </li>
+      </ol>
+      <button type="submit">Submit</button>
+    </form>
+
+    <section id="logout">
+      <button>
+        <a href="user.html"><h3>Logout</h3></a>
+      </button>
+    </section>
+
+    <script>
+      function saveUserDetails(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("nameInput").value;
+        const email = document.getElementById("emailInput").value;
+        const password = document.getElementById("passwordInput").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const state = document.getElementById("stateInput").value;
+        const city = document.getElementById("cityInput").value;
+        const pincode = document.getElementById("pincodeInput").value;
+
+        const userDetails = {
+          name,
+          email,
+          password,
+          phoneNumber,
+          state,
+          city,
+          pincode,
+        };
+
+        sessionStorage.setItem("userDetails", JSON.stringify(userDetails));
+
+        window.location.href = "detail.html";
+      }
+    </script>
+  </body>
+</html>

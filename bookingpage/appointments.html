@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Appointments</title>
+  </head>
+  <body>
+    <h2>Appointments</h2>
+    <p>
+      This is the Appointments page. Users can view and manage their
+      appointments here.
+    </p>
+
+    <h3>Add New Appointment</h3>
+    <form id="appointmentForm" onsubmit="addAppointment(event)">
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" required />
+
+      <button type="submit">Add Appointment</button>
+    </form>
+
+    <h3>Appointments List</h3>
+    <div id="appointmentsList"></div>
+
+    <p>
+      <button onclick="logout()">Logout</button>
+    </p>
+
+    <script>
+      let appointments = [];
+
+      function addAppointment(event) {
+        event.preventDefault();
+
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+
+        const newAppointment = { date, time };
+        appointments.push(newAppointment);
+
+        document.getElementById("date").value = "";
+        document.getElementById("time").value = "";
+
+        displayAppointments();
+      }
+
+      function displayAppointments() {
+        const appointmentsList = document.getElementById("appointmentsList");
+
+        appointmentsList.innerHTML = "";
+
+        if (appointments.length > 0) {
+          const ul = document.createElement("ul");
+          appointments.forEach((appointment) => {
+            const li = document.createElement("li");
+            li.textContent = `Date: ${appointment.date}, Time: ${appointment.time}`;
+            ul.appendChild(li);
+          });
+          appointmentsList.appendChild(ul);
+        } else {
+          appointmentsList.textContent = "No appointments yet.";
+        }
+      }
+
+      function logout() {
+        // Redirect to index.html after logout
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

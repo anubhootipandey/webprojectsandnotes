@@ -1,0 +1,84 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik',sans-serif;
+    background-color: #EEF0F4;
+}
+
+
+
+input{
+    color: #432000;
+    background-color: #DCE1EB;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik',sans-serif;
+    margin: 10px 0;
+}
+button{
+    color: #FDFDFD;
+    background-color: #AC485A;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik',sans-serif;
+    
+    
+}
+button:hover{
+    cursor: pointer;
+    background-color: #5f1321;
+    transition: 0.5s ease-in-out;
+}
+img{
+    width: 320px;
+    margin: 0 auto;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.resultcontainer{
+    background: rgba(0, 0, 0, 0.659);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
+.gif{
+    height: 80%;
+    width: 100%;
+    z-index:1;
+     background-image: url("https://media0.giphy.com/media/7YIsDoF9FO6SIauYRm/giphy.gif?cid=6c09b952ec0n4jvtuju1zzbvm1c0dn1eympz89m83x936xo7&ep=v1_stickers_related&rid=giphy.gif&ct=s");
+}
+.resultcontainer.active{
+    display: block;
+    z-index: 999;
+}
+h2{
+    text-align: center;
+    color: white;
+    z-index:9999;
+    font-size: 50px;
+    color: goldenrod;
+}
+h1{
+    text-align: center;
+    color: white;
+    z-index:9999;
+    font-size: 200px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <a href="index.html"><button id="homeBtn">Home</button></a>
+
+    <style>
+      #homeBtn {
+        background-color: #008cba;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px #666;
+      }
+
+      #homeBtn:hover {
+        background-color: #005f86;
+      }
+    </style>
+
+    <script>
+      const homeBtn = document.getElementById("homeBtn");
+
+      homeBtn.addEventListener("click", () => {
+        window.location.href = "/";
+      });
+    </script>
+    <h2>List of reviews:</h2>
+    <div id="name"></div>
+    <div id="email"></div>
+    <div id="message"></div>
+
+    <script>
+      const name = localStorage.getItem("name");
+      const email = localStorage.getItem("email");
+      const message = localStorage.getItem("message");
+
+      document.getElementById("name").textContent = name;
+      document.getElementById("email").textContent = email;
+      document.getElementById("message").textContent = message;
+    </script>
+  </body>
+</html>

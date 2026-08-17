@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration & Appointment Booking</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #ADBC9F;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1, h2{
+        color: #12372A;
+      }
+
+      a{
+        margin: 20px 20px 20px 20px;
+      }
+  
+      form {
+        background-color: #436850;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+  
+      input, select {
+        width: 100%;
+        background-color: #ADBC9F;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #12372A;
+        border-radius: 4px;
+      }
+  
+      button {
+        background-color: #12372A;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>User Registration & Appointment Booking</h1>
+    </header>
+    <p><a href="appointments.html">Go to Appointments</a></p>
+
+    <div class="form-container" id="registrationForm">
+      <h2>User Registration</h2>
+      <link rel="stylesheet" href="styles.css" />
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+
+        <button type="button" onclick="submitRegistration()">Register</button>
+      </form>
+    </div>
+
+    <div class="form-container" id="appointmentForm" style="display: none">
+      <h2>Appointment Booking</h2>
+      <form>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+
+        <label for="time">Time:</label>
+        <select id="time" required>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
+         </select>
+
+        <button type="button" onclick="submitAppointment()">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+
+    <div id="confirmation"></div>
+    <div id="logout" style="display: none">
+      <button onclick="logout()">Logout</button>
+    </div>
+    <script>
+      let userData = {
+        name: "",
+        email: "",
+        password: "",
+        appointments: [],
+      };
+
+      function submitRegistration() {
+        userData.name = document.getElementById("name").value;
+        userData.email = document.getElementById("email").value;
+        userData.password = document.getElementById("password").value;
+
+        document.getElementById("registrationForm").style.display = "none";
+        document.getElementById("appointmentForm").style.display = "block";
+      }
+
+      function submitAppointment() {
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+
+        const newAppointment = { date, time };
+        userData.appointments.push(newAppointment);
+
+        const confirmationMessage = `Dear ${
+          userData.name
+        }, your appointment for ${date} at ${time} is confirmed.`;
+
+        document.getElementById("confirmation").innerText = confirmationMessage;
+        document.getElementById("confirmation").style.display = "block";
+        document.getElementById("appointmentForm").style.display = "none";
+
+         window.location.href = "appointments.html";
+      }
+
+      function logout() {
+        userData = {
+          name: "",
+          email: "",
+          password: "",
+          appointments: [],
+        };
+        document.getElementById("registrationForm").style.display = "block";
+        document.getElementById("appointmentForm").style.display = "none";
+        document.getElementById("logout").style.display = "none";
+        document.getElementById("confirmation").style.display = "none";
+      }
+    </script>
+</b>

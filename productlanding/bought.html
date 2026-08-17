@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Successful</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Order Successful!</h1>
+      <div id="productDetails"></div>
+    </div>
+
+    <script>
+      let productDetails = JSON.parse(localStorage.getItem("productDetails"));
+
+      if (productDetails) {
+        let productDetailsContainer = document.getElementById("productDetails");
+        productDetailsContainer.innerHTML = `
+          <p>Product: ${productDetails.productName}</p>
+          <p>Price: Rs.${productDetails.price}</p>
+          <!-- Add more details if needed -->
+        `;
+      } else {
+        window.location.href = "index.html";
+      }
+
+      function buy(productName, price) {
+        localStorage.setItem(
+          "productDetails",
+          JSON.stringify({
+            productName: productName,
+            price: price,
+          })
+        );
+
+        window.location.href = "bought.html";
+      }
+    </script>
+  </body>
+</html>

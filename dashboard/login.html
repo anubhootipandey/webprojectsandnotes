@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>User Login</title>
+  </head>
+  <body>
+    <h2>Login to Your Account:</h2>
+    <form id="loginForm" action="update.html" onsubmit="return validateLogin()">
+      <fieldset>
+        <legend>Enter Your Details:</legend>
+        <ol>
+          <li>
+            <label for="username">Username:</label>
+            <br /><input type="text" id="username" required /><br />
+          </li>
+          <li>
+            <label for="password">Password:</label>
+            <br /><input type="password" id="password" required /><br />
+          </li>
+        </ol>
+        <button type="submit">Login</button>
+      </fieldset>
+    </form>
+
+    <p>Don't have an account? <a href="profile.html">Register here</a></p>
+
+    <script>
+      function validateLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        alert(`Login successful! Welcome, ${username}`);
+
+        window.location.href = `update.html?username=${username}`;
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

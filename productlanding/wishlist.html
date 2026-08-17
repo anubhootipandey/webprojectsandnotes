@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="index.html"><button id="homeBtn">Home</button></a>
+    <button id="wishlistBtn">Wishlist</button>
+
+    <section class="wishlist">
+      <div class="container">
+        <h2>My Wishlist</h2>
+        <p>Total Items: <span id="totalItems">0</span></p>
+        <ul id="wishlist-items"></ul>
+        <p>Total Amount: Rs.<span id="totalAmount">0</span></p>
+        <button id="clearWishlistBtn">Clear Wishlist</button>
+        <button id="generateBillBtn">Generate Bill</button>
+        <div id="bill"></div>
+      </div>
+    </section>
+
+    <script>
+      const homeBtn = document.getElementById("homeBtn");
+      const wishlistBtn = document.getElementById("wishlistBtn");
+      const clearWishlistBtn = document.getElementById("clearWishlistBtn");
+      const generateBillBtn = document.getElementById("generateBillBtn");
+      const totalItemsSpan = document.getElementById("totalItems");
+      const totalAmountSpan = document.getElementById("totalAmount");
+      const billContainer = document.getElementById("bill");
+
+      homeBtn.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+
+      wishlistBtn.addEventListener("click", () => {
+        window.location.href = "wishlist.html";
+      });
+
+      clearWishlistBtn.addEventListener("click", () => {
+        clearWishlist();
+      });
+
+      generateBillBtn.addEventListener("click", () => {
+        generateBill();
+      });
+
+      const wishlistItems =
+        JSON.parse(localStorage.getItem("wishlistItems")) || [];
+
+      function displayWishlist() {
+        const wishlistContainer = document.getElementById("wishlist-items");
+
+        wishlistContainer.innerHTML = "";
+        totalItemsSpan.textContent = wishlistItems.length;
+
+        wishlistItems.forEach((item, index) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${item.productName} - Rs.${item.price}`;
+
+          listItem.addEventListener("click", () => {
+            removeFromWishlist(index);
+          });
+
+          wishlistContainer.appendChild(listItem);
+        });
+
+        const totalAmount = wishlistItems.reduce(
+          (sum, item) => sum + item.price,
+          0
+        );
+        totalAmountSpan.textContent = totalAmount;
+      }
+
+      function removeFromWishlist(index) {
+        wishlistItems.splice(index, 1);
+        localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+        displayWishlist();
+      }
+
+      function clearWishlist() {
+        wishlistItems.length = 0;
+        localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+        displayWishlist();
+      }
+
+      function generateBill() {
+        const totalAmount = wishlistItems.reduce(
+          (sum, item) => sum + item.price,
+          0
+        );
+        totalAmountSpan.textContent = totalAmount;
+
+        const billContent = `
+    <h3>Bill</h3>
+    <p>Total Amount: Rs.${totalAmount}</p>
+    <p>Thank you for shopping with us!</p>
+    <button id="payNowBtn">Pay Now</button>
+  `;
+        billContainer.innerHTML = billContent;
+
+        clearWishlist();
+
+        const payNowBtn = document.getElementById("payNowBtn");
+        payNowBtn.addEventListener("click", () => {
+          window.location.href = "https://www.phonepe.com/";
+        });
+      }
+
+      window.addEventListener("load", displayWishlist);
+    </script>
+  </body>
+  r̥
+</html>

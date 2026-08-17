@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>User Login & Registration</title>
+  </head>
+  <body>
+    <header>
+      <h1>User Login & Registration</h1>
+    </header>
+    <p><h4>Welcome to booking system.Here you may set your daily appointments and customize the work details according to you.
+       <p> Either register yourself  or if you already have account log in the details.</p>
+    </h4></p>
+    <div id="login" style="display: block">
+       <a href="index.html"> <button onclick="login()">Login</button></a>
+      <p>
+        Don't have an account?
+        <a href="index.html" onclick="showRegistration()">Register here</a>
+      </p>
+    </div>
+
+    <div id="registration" style="display: none">
+      <h2>Register</h2>
+       <a href="login.html"><button onclick="register()">Register</button></a>
+      <p>
+        Already have an account?
+        <a href="#" onclick="showLogin()">Login here</a>
+      </p>
+    </div>
+
+    <div id="appointments" style="display: none">
+      <h2>Appointments</h2>
+      <p><a href="#" onclick="logout()">Logout</a></p>
+     </div>
+
+    <script>
+      function showAppointments() {
+        hideAll();
+        document.getElementById("appointments").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

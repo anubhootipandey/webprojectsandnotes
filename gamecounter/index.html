@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="mtxt"> Let the game begins!</h1>
+    <div class="box">
+        <div class="left">
+            <h1 class="h1">HOME</h1>
+            <div id="bbox">0</div>
+            <div class="buttons">
+                <button class="plus plus1" onclick="incre1()">+1</button>
+                <button class="plus plus2" onclick="incre2()">+2</button>
+                <button class="plus plus3" onclick="incre3()">+3</button>
+            </div>
+        </div>
+        <div id="new">
+            <button class="new" onclick="newfun()">N</button>
+        </div>
+        <div class="right">
+            <h1 class="h1">GUEST</h1>
+            <div id="gbbox">0</div>
+            <div class="buttons">
+                <button class="plus plus1" onclick="gincre1()">+1</button>
+                <button class="plus plus2" onclick="gincre2()">+2</button>
+                <button class="plus plus3" onclick="gincre3()">+3</button>
+            </div>
+        </div>
+        <!-- <button class="new">NEW</button>    -->
+        
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

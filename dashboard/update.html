@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Update User Details</title>
+  </head>
+  <body>
+    <h2>Update Your Details:</h2>
+    <form
+      id="updateForm"
+      action="detail.html"
+      onsubmit="return updateDetails()">
+      <fieldset>
+        <legend>Update Your Details:</legend>
+        <ol>
+          <li>
+            <label for="newUsername">New Username:</label>
+            <br /><input type="text" id="newUsername" required /><br />
+          </li>
+          <li>
+            <label for="newPassword">New Password:</label>
+            <br /><input type="password" id="newPassword" required /><br />
+          </li>
+        </ol>
+        <button type="submit">Update</button>
+      </fieldset>
+    </form>
+
+    <script>
+      function updateDetails() {
+        const newUsername = document.getElementById("newUsername").value;
+        const newPassword = document.getElementById("newPassword").value;
+
+        alert(
+          `Details updated! New username: ${newUsername}, New password: ${newPassword}`
+        );
+
+        window.location.href = "detail.html";
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

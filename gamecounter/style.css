@@ -1,0 +1,102 @@
+body{
+    background-image: url("https://img.freepik.com/premium-photo/cyberpunk-gaming-controller-gamepad-joystick-illustration_691560-5746.jpg?w=360");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.mtxt{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40%;
+    padding-bottom:20px ;
+    color: white;
+}
+.box{
+    height: 400px;
+    width: 700px;
+    /* background-color: #070A52; */
+    background: linear-gradient(to right, #141e30, #243b55);
+    justify-content: center;
+    margin-left: 23%;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 3px solid whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    height: 400px;
+    width: 350px;
+}
+.right{
+    height: 400px;
+    width: 350px;
+}
+.h1{
+    margin-left: 30%;
+    padding: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#bbox{
+    height: 150px;
+    width: 150px;
+    background-color: #BACDDB;
+    margin-left: 25%;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#gbbox{
+    height: 150px;
+    width: 150px;
+    background-color: #BACDDB;
+    margin-left: 25%;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.buttons{
+    display: flex;
+    height: 50px;
+    width: 220px;
+    margin-top: 20px;
+    margin-left: 18%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.plus{
+    height: 35px;
+    width: 35px;
+    background-color: #212a39;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.plus:hover{
+    border: 4px solid white;
+}
+.new{
+    height: 40px;
+    width: 40px;
+}
+.new{
+    height:70px;
+    width: 70px;
+    border-radius: 30%;
+    font-size: 50px;
+    cursor: pointer;
+    background-color: #E21818;
+    color: white;
+}
+.new:hover{
+    border: 2px solid white;
+}
